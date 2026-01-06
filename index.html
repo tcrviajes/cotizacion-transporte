@@ -16,14 +16,15 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
+      padding: 20px;
     }
     .container {
       max-width: 400px;
-      padding: 40px;
     }
     h1 {
       font-size: 28px;
       margin-bottom: 20px;
+      font-weight: 600;
     }
     .loader {
       width: 50px;
@@ -40,11 +41,19 @@
     p {
       font-size: 16px;
       opacity: 0.9;
+      line-height: 1.5;
     }
     a {
       color: white;
       text-decoration: underline;
       font-weight: 600;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    .manual-link {
+      margin-top: 30px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -53,16 +62,16 @@
     <h1>🚗 IACR Transport</h1>
     <div class="loader"></div>
     <p>Redirigiendo al formulario de cotización...</p>
-    <p style="font-size: 14px; margin-top: 30px;">
-      Si no redirige automáticamente, 
-      <a href="https://script.google.com/macros/s/AKfycbxSzorH28FzLpxYTeTv3Pc8BudpSvyxiF6H2C2TcmuUMYbAP2t8LKwwdFHq1NnDWohc/exec" id="manualLink">haz clic aquí</a>
+    <p class="manual-link">
+      Si no redirige automáticamente,<br>
+      <a href="https://script.google.com/macros/s/AKfycbxSzorH28FzLpxYTeTv3Pc8BudpSvyxiF6H2C2TcmuUMYbAP2t8LKwwdFHq1NnDWohc/exec">haz clic aquí</a>
     </p>
   </div>
 
   <script>
-    // Redirect inmediato
+    // Redirect inmediato usando replace (más confiable en móviles)
     setTimeout(function() {
-      window.location.href = 'https://script.google.com/macros/s/AKfycbxSzorH28FzLpxYTeTv3Pc8BudpSvyxiF6H2C2TcmuUMYbAP2t8LKwwdFHq1NnDWohc/exec';
+      window.location.replace('https://script.google.com/macros/s/AKfycbxSzorH28FzLpxYTeTv3Pc8BudpSvyxiF6H2C2TcmuUMYbAP2t8LKwwdFHq1NnDWohc/exec');
     }, 500);
   </script>
 </body>
